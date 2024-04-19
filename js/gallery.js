@@ -93,8 +93,11 @@ gallery.addEventListener("click", function (event) {
     const instance = basicLightbox.create(
       `<img src="${largeImageSrc}" alt="${description}">`
     );
-
-    // Відкриття модального вікна
     instance.show();
   }
 });
+const instance = basicLightbox.create(`
+    <img src="assets/images/image.png" width="800" height="600">
+`);
+
+instance.show();
