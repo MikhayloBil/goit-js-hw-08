@@ -32,3 +32,7 @@ ul {
   width: 360px;
   height: 200px;
 }
+
+.gallery-item:hover {
+  border-left-color: rgba(78, 117, 255, 1);
+}
