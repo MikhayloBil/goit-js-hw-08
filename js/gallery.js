@@ -82,15 +82,14 @@ const galleryHTML = images
   )
   .join("");
 
-gallery.innerHTML = galleryHTML;
+gallery.addEventListener("click", function (event) {
+  event.preventDefault();
+  if (event.target.classList.contains("gallery-link")) {
+    const largeImageSrc = event.target.getAttribute("href");
+    console.log("Посилання на велике зображення:", largeImageSrc);
+  }
+});
 
-//gallery.addEventListener("click", function (event) {
-//event.preventDefault();
-// if (event.target.classList.contains("gallery-link")) {
-// const largeImageSrc = event.target.getAttribute("href");
-//  console.log("Посилання на велике зображення:", largeImageSrc);
-//  }
-//});
 gallery.addEventListener("click", function (event) {
   event.preventDefault();
   if (event.target.classList.contains("gallery-image")) {
@@ -105,3 +104,4 @@ gallery.addEventListener("click", function (event) {
     instance.show();
   }
 });
+gallery.innerHTML = galleryHTML;
