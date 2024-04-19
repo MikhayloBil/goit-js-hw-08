@@ -82,19 +82,12 @@ const galleryHTML = images
   )
   .join("");
 
-gallery.addEventListener("click", function (event) {
-  event.preventDefault();
-  if (event.target.classList.contains("gallery-link")) {
-    const largeImageSrc = event.target.getAttribute("href");
-    console.log("Посилання на велике зображення:", largeImageSrc);
-  }
-});
+gallery.innerHTML = galleryHTML;
 
 gallery.addEventListener("click", function (event) {
   event.preventDefault();
   if (event.target.classList.contains("gallery-image")) {
     const largeImageSrc = event.target.getAttribute("data-source");
-    const description = event.target.getAttribute("alt"); // Оголошення змінної description
 
     // Ініціалізація модального вікна з великим зображенням
     const instance = basicLightbox.create(
@@ -105,4 +98,3 @@ gallery.addEventListener("click", function (event) {
     instance.show();
   }
 });
-gallery.innerHTML = galleryHTML;
