@@ -89,15 +89,9 @@ gallery.addEventListener("click", function (event) {
   if (event.target.classList.contains("gallery-image")) {
     const largeImageSrc = event.target.getAttribute("data-source");
 
-    // Ініціалізація модального вікна з великим зображенням
     const instance = basicLightbox.create(
       `<img src="${largeImageSrc}" alt="${description}">`
     );
     instance.show();
   }
 });
-const instance = basicLightbox.create(`
-    <img src="assets/images/image.png" width="800" height="600">
-`);
-
-instance.show();
