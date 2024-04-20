@@ -64,7 +64,7 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('ul.gallery');
+const gallery = document.querySelector("ul.gallery");
 const galleryHTML = images
   .map(
     ({ preview, original, description }) => `
@@ -84,13 +84,13 @@ const galleryHTML = images
 
 gallery.innerHTML = galleryHTML;
 
-gallery.addEventListener('click', function (event) {
+gallery.addEventListener("click", function (event) {
   event.preventDefault();
   if (event.target.classList.contains("gallery-image")) {
     const largeImageSrc = event.target.getAttribute("data-source");
     const instance = basicLightbox.create(
       `<img src="${largeImageSrc}" alt="${description}">`
-    )
+    );
     instance.show();
   }
 });
