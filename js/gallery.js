@@ -69,7 +69,7 @@ const galleryHTML = images
   .map(
     ({ preview, original, description }) => `
       <li class="gallery-item">
-        <a class="gallery-link" href="${original}">
+        <a class="gallery-link" href="${preview}">
           <img
             class="gallery-image"
             src="${preview}"
@@ -88,7 +88,6 @@ gallery.addEventListener("click", function (event) {
   event.preventDefault();
   if (event.target.classList.contains("gallery-image")) {
     const largeImageSrc = event.target.getAttribute("data-source");
-
     const instance = basicLightbox.create(
       `<img src="${largeImageSrc}" alt="${description}">`
     );
